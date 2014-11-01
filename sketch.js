@@ -1,6 +1,6 @@
 var config = {
     minsize: 10,
-    maxsize: 80,
+    maxsize: 60,
     speed: 1,
     spikes: 5
 };
