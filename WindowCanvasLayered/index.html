@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+        html {
+          height: 100%;
+          padding:0;
+        }
+
+        body {
+          min-height: 100%;
+          padding: 0;
+          margin: 0; 
+          overflow: hidden;
+          } 
+        
+        canvas{ 
+          padding:0;
+          }
+        
+        #assets{ 
+          position: relative; 
+          }
+
+        #assets a{
+          position:absolute;
+          }
+
+        #assets a:first-child {
+          top:0px;
+          left:0px;
+        }
+
+        #assets a:first-child + a {
+          top:0px;
+          left:0px;
+          }
+
+        #assets a:first-child + a + a {
+          top:0px;
+          left:0px;
+          }
+    </style>
+
+    <script>
+        
+        function stackToTop(photoid) {
+            var photo = document.getElementbyId(photoid).style;
+            photo.zindex = "20";
+        }
+
+        function stackToBottom(photoid) {
+            var photo = document.getElementbyId(photoid).style;
+            photo.zindex = "10";
+        }
+
+    </script>
+
+</head>
+
+<body>
+  
+  <div id="assets">
+     <a href="#" id="winter" onmouseover="stackToTop('winter')" onmouseout="stackToBottom('winter')">     
+          <img src="images/winter.png" alt="" title="winter">
+      </a>
+
+     <a href="#" id="fall" onmouseover="stackToTop('fall')" onmouseout="stackToBottom('fall')">
+          <img src="images/fall.png" alt="" title="fall">
+      </a>
+          
+      <a href="#" id="frame">
+          <img src="images/frame.png" alt="" title="frame"/>
+      </a>
+  </div>
+
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.min.js"></script>
+  <script type="text/javascript" src="js/two.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.3.7/p5.min.js"></script>
+  <script type="text/javascript" src="js/sketch.js"></script>
+</body>
+
+</html>
