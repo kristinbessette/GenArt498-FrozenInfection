@@ -80,7 +80,7 @@
                     backgroundPosition: '0 ' + height[i] * (randomLeaf - 1) + 'px'
                 })
 
-            $('body').append(img)
+            $('#fall').append(img)
         }
 
         this.timer = setInterval($.proxy(this.leafCycle, this), this.options.cycleSpeed)

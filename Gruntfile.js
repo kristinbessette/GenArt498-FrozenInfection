@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                     livereload: true,
                 },
                 files: [
-                    'sketch.js',
+                    'js/*.js',
                     'index.html'
                 ]
             }
