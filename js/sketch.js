@@ -44,6 +44,11 @@ function draw() {
     clear();
     // background(31);
 
+    for(var i = 0; i < icefrost.length; i++) {
+        icefrost[i].grow();
+        icefrost[i].show();
+    }
+
     for(var j = 0; j < particles.length; j++) {
         particles[j].fall();
         particles[j].show();

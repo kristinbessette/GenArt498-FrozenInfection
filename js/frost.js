@@ -17,6 +17,9 @@ Frost.prototype.show = function(){
     push();
     translate(this.position.x, this.position.y);
     rotate(this.angle);
+    strokeWeight(20);
+    stroke(255, 255, 255, 100);
+
     for(var i = 1; i <= frost.spikes; i++) {
         rotate(TAU/frost.spikes);
         line(0, 0, this.size, this.size);
