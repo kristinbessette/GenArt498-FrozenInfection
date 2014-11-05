@@ -20,7 +20,7 @@ var icefrost = [];
 
 function setup() {
     var canvas = createCanvas(windowWidth, windowHeight);
-    stroke(255, 255, 255, 50);
+    stroke(255, 255, 255, 100);
     strokeWeight(config.stroke);
 
     for(var i = 0; i < config.snow_particles; i++ ) {
