@@ -36,17 +36,13 @@ function setup() {
     var canvas = createCanvas(windowWidth, windowHeight);
     stroke(255, 255, 255, 100);
     strokeWeight(frost.stroke);
+    winter();
 }
 
 function draw() {
 
     clear();
     // background(31);
-
-    // for(var i = 0; i < particles.length; i++) {
-    //     icefrost[i].grow();
-    //     icefrost[i].show();
-    // }
 
     for(var j = 0; j < particles.length; j++) {
         particles[j].fall();

@@ -8,40 +8,48 @@
         }
 
         body {
-          min-height: 100%;
-          padding: 0;
-          margin: 0;
-          overflow: hidden;
+            width: 100%;
+            min-height: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
           }
 
-        canvas{
-          padding:0;
+        canvas {
+            position: absolute;
+            z-index: -1;
         }
 
-        #scene{
-          position: relative;
+        #winter{
+            background: url(images/winter.png) no-repeat;
+            background-size: cover;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+
         }
 
-        #scene img{
-          position:absolute;
-          width: 100%;
+        #fall{
+            background: url(images/fall.png) no-repeat;
+            background-size: cover;
+            height: 100%;
+            position: absolute;
+            width: 100%;
         }
 
-        /*#assets a:first-child {
-          top:0px;
-          left:0px;
+        #frame{
+            background: url(images/frame.png) no-repeat;
+            background-size: cover;
+            height: 100%;
+            position: absolute;
+            width: 100%;
         }
 
-        #assets a:first-child + a {
-          top:0px;
-          left:0px;
-          }
-
-        #assets a:first-child + a + a {
-          top:0px;
-          left:0px;
-          }*/
-
+        .backdrop {
+            z-index: -1;
+        }
 
         .october-leaf {
           position: absolute;
@@ -51,6 +59,8 @@
           -moz-transform: translateZ(0);
           transform: translateZ(0);
           }
+
+
     </style>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
@@ -80,24 +90,21 @@
 
 
 <body>
+ <!-- <a href="#" id="winter" onmouseover="stackToTop('winter')" onmouseout="stackToBottom('winter')"> -->
+  <div id="winter" class="backdrop"></div>
+  <div id="fall" class="backdrop"></div>
 
+  <!-- </a> -->
 
-  <div id="scene">
-     <!-- <a href="#" id="winter" onmouseover="stackToTop('winter')" onmouseout="stackToBottom('winter')"> -->
-      <img src="images/winter.png" alt="" title="winter">
-      <!-- </a> -->
+ <!-- <a href="#" id="fall" onmouseover="stackToTop('fall')" onmouseout="stackToBottom('fall')"> -->
+  <!-- <img src="images/fall.png" alt="" title="fall" class="backdrop"> -->
+  <!-- </a> -->
 
-     <!-- <a href="#" id="fall" onmouseover="stackToTop('fall')" onmouseout="stackToBottom('fall')"> -->
-      <img src="images/fall.png" alt="" title="fall">
-      <!-- </a> -->
+  <div id="leaves" class="backdrop"></div>
 
-      <div id="fall"></div>
-
-      <!-- <a href="#" id="frame"> -->
-      <img src="images/frame.png" alt="" title="frame"/>
-      <!-- </a> -->
-  </div>
-
+  <!-- <a href="#" id="frame"> -->
+  <div id="frame"></div>
+  <!-- </a> -->
 
   <script> jQuery(document).octoberLeaves(); </script>
 
