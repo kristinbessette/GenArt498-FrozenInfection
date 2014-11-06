@@ -17,16 +17,21 @@ Frost.prototype.show = function(){
     push();
     translate(this.position.x, this.position.y);
     rotate(this.angle);
-    strokeWeight(frost.stroke*this.size/this.maxsize);
-    stroke(255, 255, 255, 100);
+    
+    // image(frostImg, this.position.x, this.position.y, this.size, this.size);
 
-    for(var i = 1; i <= frost.spikes; i++) {
-        rotate(TAU/frost.spikes);
+
+    // stroke(255, 255, 255, 100);
+    // for(var i = 1; i <= frost.spikes; i++) {
+    //     rotate(TAU/frost.spikes);
         // for(var k = 1; k <= frost.segments; k++){
         //     strokeWeight(frost.stroke * this.size/this.maxsize / k);
         //     line(this.size/frost.segments * (k-1), this.size/frost.segments * (k-1), this.size/frost.segments, this.size/frost.segments);
         // }
-        line(0, 0, this.size, this.size);
-    }
+
+        // strokeWeight(frost.stroke*this.size/this.maxsize);
+        // line(0, 0, this.size, this.size);        
+    // }
+
     pop();
 };
