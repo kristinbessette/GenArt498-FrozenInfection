@@ -32,7 +32,7 @@ var leaf;
 var winterFlag = 0;
 
 function preload() {
-    frostImg = loadImage("images/frost.png");
+    flakeImg = loadImage("images/flake.png");
 }
 
 function setup() {
