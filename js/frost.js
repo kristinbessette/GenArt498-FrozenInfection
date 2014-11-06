@@ -17,7 +17,7 @@ Frost.prototype.show = function(){
     push();
     translate(this.position.x, this.position.y);
     rotate(this.angle);
-    strokeWeight(20);
+    strokeWeight(20*this.size/this.maxsize);
     stroke(255, 255, 255, 100);
 
     for(var i = 1; i <= frost.spikes; i++) {

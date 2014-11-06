@@ -13,12 +13,12 @@ var snow = {
     maxsize: 12,
     maxspeed: 2,
     gravity: 0.1,
-    wind: 0.0
+    wind: 0.02
 };
 
 var frost = {
     minsize: 20,
-    maxsize: 100,
+    maxsize: 80,
     speed: 2,
     spikes: 5,
     stroke: 20,
@@ -27,6 +27,7 @@ var frost = {
 var particles = [];
 var icefrost = [];
 var leaf;
+var winterFlag = 0;
 
 function preload() {
     leaf = loadImage("images/leaf.png");
@@ -36,7 +37,7 @@ function setup() {
     var canvas = createCanvas(windowWidth, windowHeight);
     stroke(255, 255, 255, 100);
     strokeWeight(frost.stroke);
-    winter();
+    setInterval(winter, 10000);
 }
 
 function draw() {
@@ -64,11 +65,14 @@ function fall() {
 }
 
 function winter() {
-    for(var i = 0; i < snow.particles; i++ ) {
-        var flake = new Snow();
-        particles.push(flake);
+    if(!winterFlag) {
+        for(var i = 0; i < snow.particles; i++ ) {
+            var flake = new Snow();
+            particles.push(flake);
+        }
+        console.log("winter");
+        winterFlag = 1;
     }
-    console.log("winter");
 }
 
 function mousePressed() {
@@ -80,6 +84,8 @@ function mouseDragged() {
 }
 
 function createFrost(x, y) {
-    var aFrost = new Frost(x, y);
-    icefrost.push(aFrost);
+    if(winterFlag){
+        var aFrost = new Frost(x, y);
+        icefrost.push(aFrost);
+    }
 }
