@@ -19,9 +19,11 @@ var snow = {
 var frost = {
     minsize: 20,
     maxsize: 80,
-    speed: 2,
-    spikes: 5,
-    stroke: 20,
+    speed: 1,
+    spikes: 9,
+    stroke: 8,
+    segments: 6,
+    particles: 500
 };
 
 var particles = [];
@@ -80,7 +82,12 @@ function mousePressed() {
 }
 
 function mouseDragged() {
-    createFrost(mouseX, mouseY);
+    var oldX;
+    var oldY;
+    var tolerance = 5;
+    
+    setInterval(createFrost(mouseX, mouseY), 100);
+    
 }
 
 function createFrost(x, y) {
@@ -89,3 +96,9 @@ function createFrost(x, y) {
         icefrost.push(aFrost);
     }
 }
+
+function killFrost(i){
+
+}
+
+

@@ -17,11 +17,15 @@ Frost.prototype.show = function(){
     push();
     translate(this.position.x, this.position.y);
     rotate(this.angle);
-    strokeWeight(20*this.size/this.maxsize);
+    strokeWeight(frost.stroke*this.size/this.maxsize);
     stroke(255, 255, 255, 100);
 
     for(var i = 1; i <= frost.spikes; i++) {
         rotate(TAU/frost.spikes);
+        // for(var k = 1; k <= frost.segments; k++){
+        //     strokeWeight(frost.stroke * this.size/this.maxsize / k);
+        //     line(this.size/frost.segments * (k-1), this.size/frost.segments * (k-1), this.size/frost.segments, this.size/frost.segments);
+        // }
         line(0, 0, this.size, this.size);
     }
     pop();
